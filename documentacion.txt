@@ -1,0 +1,256 @@
+ 	Plataforma para interactuar con espectadores en streaming "UltimateStrem"
+1. Problemática
+•	Descripción General:
+o	Las herramientas actuales para streamers suelen limitarse a integrarse con plataformas específicas, lo que impide a los streamers con equipos de bajo rendimiento utilizar múltiples plataformas simultáneamente debido al alto consumo de recursos.
+•	Impacto:
+o	Streamers que transmiten en varias plataformas a la vez deben configurar y usar distintas herramientas, lo que genera desorden en su interfaz y un mayor consumo de recursos, afectando la calidad del streaming.
+•	Motivo para Resolverlo:
+o	Crear una plataforma compatible con múltiples servicios de streaming, optimizando el consumo de recursos y facilitando la gestión de transmisiones en simultáneo.  
+2. Solución
+•	Propuesta de Solución:
+o	La solución consiste en desarrollar una plataforma web de gestión de herramientas de interacción para streaming, utilizando React.js para el frontend y Node.js con Express.js para el backend. Esta plataforma permitirá a los streamers gestionar de manera centralizada sus interacciones en múltiples plataformas (Twitch, TikTok, Kick) de forma eficiente y en tiempo real.
+El sistema será modular, lo que permitirá la integración de nuevas plataformas y funcionalidades según las necesidades futuras. Además, se implementará una interfaz unificada e intuitiva, mejorando la experiencia del streamer al consolidar todas las interacciones en una sola visualización.
+•	Características Clave:
+o	Widget Unificado de Chat: Unifica los comentarios de todas las plataformas en un solo widget interactivo.
+o	Widget unificado que permite al streamer gestionar la interacción desde una sola vista.
+o	Integración Múltiple de Plataformas: Permite configurar y gestionar transmisiones en diversas plataformas simultáneamente, eliminando la necesidad de múltiples configuraciones.
+o	Sistema de Recompensas: Los espectadores activos podrán acumular puntos y utilizarlos para acciones en el streaming (pedir canciones).
+•	Beneficios:
+o	Optimización de Recursos: La unificación de la gestión de plataformas reduce el consumo de recursos del sistema, mejorando la estabilidad del streaming.
+o	Mejora de la Interacción: Facilita una interacción fluida con los espectadores de todas las plataformas, lo que incrementa la participación y retención.
+o	Simplicidad para el Streamer: Centralizar la administración de herramientas en una única interfaz mejora la experiencia del usuario, permitiendo mayor enfoque en el contenido.________________________________________
+3. Desarrollo
+•	Plan de Acción:
+o	El desarrollo del proyecto se dividirá en 5 fases:
+1.	Fase 1: Investigación
+•	Investigar las APIs disponibles de las plataformas de streaming que integrará la plataforma (Twitch, TikTok, kick.).
+•	Determinar las limitaciones y capacidades de cada API en términos de interacción, autenticación y transmisión de datos en tiempo real.
+2.	Fase 2: Diseño
+•	Diseñar la arquitectura general: Frontend (React.js), Backend (Node.js), Base de Datos (MongoDB), API Integration, y WebSockets.
+•	Crear los wireframes y mockups de la interfaz de usuario para el panel de administración y los widgets.
+•	Definir los flujos de interacción: cómo se gestionarán comentarios, recompensas y comandos.
+3.	Fase 3: Desarrollo del Backend y Frontend
+•	Definir y Desarrollar Componentes Clave del Sistema:
+Frontend:
+	Frontend: Implementar la interfaz de usuario utilizando React.js. 
+	Desarrollar el panel de administración para gestionar configuraciones y recompensas.
+	Crear el widget interactivo que centralice los comentarios de las distintas plataformas.
+	Integrar funcionalidades de comandos, incluyendo:
+•	Solicitar canción: !play [Canción - Artista]
+•	Saltar canción: !skip
+•	Remover canción: !remove [Canción - Artista]
+Backend: 
+	Configurar el servidor con Node.js y Express.js.
+	Integrar APIs de Twitch, TikTok y Kick.
+	Crear conexión a la base de datos MongoDB para almacenar configuraciones personalizadas, recompensas y datos de usuarios.
+	Implementar WebSockets para la transmisión de datos en tiempo real (comentarios y recompensas).
+4.	Fase 4: Pruebas y Ajustes
+Objetivo: Asegurar el correcto funcionamiento e integración del sistema.
+•	Realizar pruebas de integración entre la plataforma y las diferentes APIs para asegurarse de que se gestionen correctamente las interacciones.
+•	Probar la funcionalidad del widget en entornos reales de transmisión.
+•	Realizar ajustes en el sistema de recompensas y comandos para garantizar una experiencia de usuario fluida.
+5.	Fase 5: Despliegue
+•	Implementar la plataforma en un servidor en la nube (AWS, Heroku, Google Cloud) para asegurar disponibilidad y escalabilidad.
+•	Probar el rendimiento bajo carga para garantizar que la plataforma pueda manejar múltiples transmisiones y comentarios simultáneamente.
+•	Tecnologías Utilizadas:
+o	Backend:
+•	Node.js con Express.js para manejar el servidor y la conexión con las APIs de las plataformas de streaming.
+•	APIs integradas:
+	TikTok API: Para recolección de comentarios en tiempo real
+	Kick API: Para sincronización de interacciones en tiempo real, como mensajes y reacciones.
+	Twitch API: Para recolección de comentarios en tiempo real
+•	MongoDB para almacenar datos de usuarios, recompensas y configuraciones personalizadas.
+•	WebSockets para permitir la transmisión de datos en tiempo real entre el servidor y el widget.
+o	Frontend:
+•	HTML, CSS, JavaScript para el desarrollo del panel de administración y el widget que se integrará en los streamings.
+•	React.js para crear una interfaz de usuario interactiva y dinámica.
+o	Seguridad:
+•	OAuth para la autenticación segura de los streamers.
+•	Recursos Necesarios:
+o	Equipo humano:
+•	Desarrolladores full-stack con experiencia en Node.js y React.
+•	Expertos en integración de APIs y manejo de WebSockets para la transmisión de datos en tiempo real.
+•	Diseñador de interfaces para la creación del panel y el widget.
+o	Recursos técnicos:
+•	Servidor en la nube (como AWS o Heroku) para alojar la plataforma.
+•	Servicios de base de datos MongoDB.
+•	Herramientas para pruebas de carga y rendimiento.
+•	Cronograma:
+o	El proyecto se desarrollará en un plazo de 6 meses, con las siguientes fases
+•	Mes 1-2: Investigación y Diseño
+	Estudio de las APIs de streaming.
+	Diseño de la interfaz y arquitectura del sistema.
+•	Mes 3-4: Desarrollo del Backend y Frontend
+	Desarrollo de las funcionalidades del servidor y las integraciones con las APIs.
+	Implementación de la interfaz y el widget interactivo.
+•	Mes 5: Pruebas y Ajustes
+	Pruebas de funcionalidad y rendimiento.
+	Ajustes según el feedback de las pruebas.
+•	Mes 6: Despliegue
+	Implementación final en un servidor en la nube y lanzamiento de la plataforma.
+
+
+
+
+
+
+Historias de Usuario
+Streamer (Administrador)
+Historia de Usuario 1:
+Como streamer quiero unificar los comentarios de todas mis plataformas de streaming en un solo widget para poder interactuar con mis espectadores de manera más eficiente y sin tener que cambiar entre diferentes interfaces.
+Historia de Usuario 2:
+Como streamer quiero gestionar las configuraciones de integración y recompensas desde un panel centralizado para garantizar que los streamers puedan configurar sus transmisiones y recompensas de manera rápida y sin complicaciones.
+Historia de Usuario 3: 
+Como streamer quiero ver un historial en el cual pueda ver los puntos que se han utilizado, los que se han ganado y los que ha regalado el moderador o a quitado.
+Historia de Usuario 4:
+Como Streamer quiero poder agregar o quitar puntos a espectadores y moderadores para las diferentes dinámicas que se realicen en el live.
+Historia de Usuario 5:
+Como streamer, quiero que el sistema me permita configurar alertas personalizadas para eventos importantes (como donaciones o nuevos seguidores) para aumentar la interacción con mis espectadores.
+Moderador
+Historia de Usuario 1:
+Como moderador quiero poder agregar o quitar puntos a espectadores para las diferentes dinámicas que se realicen en el live, esta acción me descontaría puntos de los que tengo.
+Historia de Usuario 2:
+Como moderador quiero poder ver cuántos puntos tiene cada espectador para brindar información a los que requieran saber su cantidad de puntos.
+
+Espectador
+Historia de Usuario 1:
+Como espectador, quiero acumular puntos y utilizarlos para solicitar canciones durante el streaming para sentirme más involucrado en la transmisión y disfrutar de una experiencia personalizada.
+Historia de Usuario 2:
+Como espectador, quiero poder ver una lista pública de recompensas que puedo obtener usando mis puntos para saber qué puedo solicitar durante la transmisión.
+
+
+
+Criterios de aceptación
+Streamer (Administrador)
+Historia de Usuario 1 – Criterios de Aceptación:
+•	El widget debe mostrar los comentarios de todas las plataformas de streaming integradas (Twitch, TikTok, Kick) en tiempo real.
+Los comentarios deben estar claramente identificados por la plataforma de origen.
+•	El sistema debe manejar correctamente la carga de comentarios de múltiples plataformas sin retrasos significativos.
+Historia de Usuario 2 – Criterios de Aceptación:
+•	El panel de administración debe permitir la configuración de integraciones con plataformas como Twitch, TikTok y Kick.
+•	El administrador debe poder definir, editar y eliminar recompensas que los streamers puedan ofrecer a sus espectadores.
+•	El panel debe proporcionar una interfaz intuitiva y accesible para realizar configuraciones sin necesidad de conocimientos técnicos avanzados.
+•	Los cambios realizados en el panel deben reflejarse en tiempo real en las configuraciones activas de los streamers.
+Historia de Usuario 3 – Criterios de Aceptación:
+•	El sistema debe registrar y mostrar un historial detallado de los puntos ganados por cada espectador, incluyendo fecha y motivo.
+•	El historial debe mostrar también los puntos gastados, con detalles sobre en qué se utilizaron (por ejemplo, solicitud de canciones).
+•	El streamer debe poder filtrar y buscar en el historial por nombre de usuario, fecha, o tipo de transacción (ganar o gastar puntos).
+•	El sistema debe asegurar que el historial sea accesible en tiempo real, reflejando las transacciones más recientes sin retrasos.
+
+Historia de Usuario 4 – Criterios de Aceptación:
+•	El streamer debe poder agregar o quitar puntos a moderadores y espectadores.
+•	El sistema debe registrar cuantos puntos se agregan y se quitan a un moderador o espectador.
+Historia de Usuario 5 – Criterio de Aceptación
+•	El sistema debe permitir al streamer personalizar alertas para distintos eventos (donaciones, nuevos seguidores.).
+•	Las alertas deben mostrarse en tiempo real durante la transmisión.
+•	El streamer debe poder elegir el diseño y los sonidos de las alertas.
+•	Las alertas deben integrarse automáticamente con todas las plataformas de streaming.
+
+Moderador
+Historia de Usuario 1 – Criterios de Aceptación:
+•	El moderador debe poder agregar puntos a los espectadores 
+•	
+•	El moderador debe poder quitar muntos a los espectadores
+•	
+•	El sistema debe descontar los puntos del moderador cuando le agregue puntos a un espectador
+
+Historia de Usuario 2 – Criterios de Aceptación:
+•	El moderador puede ver una lista de los usuarios que tienen puntos
+•	El sistema debe mostrar una lista de los espectadores en el cual se visualiza la cantidad de puntos que tiene cada uno  
+Espectador
+Historia de Usuario 1 – Criterios de Aceptación:
+•	El sistema debe permitir a los espectadores acumular puntos basados en el tiempo de visualización o interacción en el streaming.
+•	Los espectadores deben tener la opción de gastar puntos para solicitar canciones a través de un comando específico en el chat.
+•	El sistema debe notificar al espectador si su solicitud de canción fue aceptada o si necesita más puntos.
+•	Las canciones solicitadas deben ser añadidas a una lista de reproducción en el orden en que fueron solicitadas.
+
+Historia de Usuario 2 – Criterios de Aceptación:
+•	El sistema debe mostrar una lista de recompensas disponibles basada en la cantidad de puntos que tiene el espectador.
+•	El espectador debe poder visualizar cuántos puntos necesita para cada recompensa.
+•	La lista de recompensas debe actualizarse automáticamente en función de las configuraciones del streamer.
+
+Requerimientos Funcionales y No Funcionales
+
+Requerimientos funcionales
+ID	Requerimiento Funcional	Prioridad
+RF01	El sistema debe permitir al streamer unificar los comentarios de múltiples plataformas en un widget.	Alta
+RF02	El sistema debe identificar y mostrar la plataforma de origen de cada comentario.	Baja
+RF03	El panel debe permitir configurar las integraciones con plataformas de streaming como Twitch y TikTok.	Alta
+RF04	El sistema debe permitir a los espectadores acumular y gastar puntos para solicitar canciones.	Media
+RF05	El sistema debe registrar y mostrar un historial de puntos ganados y utilizados por cada espectador.	Baja
+RF06	El streamer debe poder agregar o quitar puntos a espectadores y moderadores desde un panel.	Baja
+RF07	El streamer de poder modificar alertas para diferentes alertas como un nuevo seguidor.	Media
+RF07	El sistema debe permitir loguear la cuenta de Spotify del streamer para que la solicitud de canciones funcione 	Alta
+		
+		
+		
+		
+		
+
+Requerimiento no funcional
+ID	Requerimientos no funcionales	Prioridad
+RNF01	El sistema debe responder a las solicitudes en un tiempo máximo de 2 segundos.	Alta
+RNF02	El sistema debe estar disponible al 99.9% del tiempo durante las horas de transmisión.	Alta
+RNF03	El sistema debe cifrar toda la información sensible, como credenciales de usuario.	Alta
+RNF04	El sistema debe ser escalable para manejar hasta 10,000 usuarios simultáneos sin pérdida de rendimiento.	Alta
+RNF05	El sistema debe funcionar sin novedad cuando una plataforma de streaming que se conecta por api deja de funcionar.	Alta
+
+Caso de Uso
+Caso de Uso 1: Iniciar Sesión
+•	Nombre: Iniciar Sesión
+•	Actores: Streamer, Moderador
+•	Descripción: El usuario se autentica en la plataforma ingresando sus credenciales.
+•	Flujo principal:
+1.	El usuario abre la página de inicio de sesión.
+2.	El usuario ingresa su correo y contraseña.
+3.	El sistema verifica las credenciales.
+4.	Si las credenciales son válidas, el sistema genera un token de sesión y redirige al usuario a la página principal.
+•	Flujo alternativo:
+o	Si las credenciales no son válidas, el sistema muestra un mensaje de error indicando que el correo o la contraseña son incorrectos.
+
+
+Caso de Uso 2: Gestionar Recompensas
+•	Nombre: Gestionar Recompensas
+•	Actores: Streamer, Moderador
+•	Descripción: El usuario puede agregar, editar y eliminar recompensas que los espectadores pueden obtener.
+•	Flujo principal:
+1.	El usuario accede al panel de gestión de recompensas.
+2.	El usuario selecciona la opción de agregar nueva recompensa.
+3.	El sistema muestra un formulario para ingresar los detalles de la recompensa (nombre, puntos requeridos, descripción).
+4.	El usuario guarda la nueva recompensa.
+5.	El sistema la almacena y la muestra en la lista de recompensas disponibles.
+•	Flujo alternativo:
+o	Si el formulario no está completo, el sistema muestra un mensaje de error indicando que todos los campos deben llenarse.
+
+
+Caso de Uso 3: Verificar Historial de Puntos
+•	Nombre: Verificar Historial de Puntos
+•	Actores: Streamer, Moderador
+•	Descripción: Permite a los streamers y moderadores ver el historial de puntos ganados y gastados por los espectadores.
+•	Flujo principal:
+1.	El usuario accede a la página de historial de puntos.
+2.	El sistema muestra una lista de los espectadores y sus puntos.
+3.	El usuario puede buscar a un espectador específico.
+4.	El sistema filtra los resultados en tiempo real.
+5.	El usuario selecciona un espectador para ver el historial detallado de transacciones (puntos ganados, gastados, y regalos de puntos).
+•	Flujo alternativo:
+o	Si no hay transacciones registradas para un espectador, el sistema muestra un mensaje indicando que no se encontraron registros.
+
+
+
+Caso de Uso 4: Administrar Puntos de Espectadores
+•	Nombre: Administrar Puntos de Espectadores
+•	Actores: Moderador, Streamer
+•	Descripción: El moderador o streamer puede agregar o quitar puntos a un espectador según las dinámicas del streaming.
+•	Flujo principal:
+1.	El usuario accede a la página de gestión de puntos.
+2.	Selecciona a un espectador de la lista.
+3.	Ingresar la cantidad de puntos a agregar o quitar.
+4.	El sistema actualiza la cantidad de puntos del espectador.
+5.	Se registra la transacción en el historial.
+•	Flujo alternativo:
+o	Si se intenta quitar más puntos de los disponibles, el sistema muestra un mensaje indicando que la transacción es inválida.
+
+
+
+
